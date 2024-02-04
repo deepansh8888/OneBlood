@@ -9,13 +9,13 @@ const port = 8000;
 const secretKey = 'your-secret-key';
 const User = require('../database/userModel');
 const twilio = require('twilio');
-const accountSid = 'AC78350d8b6297dbe3e4ecf58967350839';
-const authToken = '6f80ce0cfb00f665dcbad42d721a30cd';
+// const accountSid = 'your_account_sid';
+const authToken = 'your_auth_key';
 const client = twilio(accountSid, authToken);
-const verifyServiceSid = 'VAb7ba79d4ed6a11a8f24feec4ccf779e8';
-const fromWhatsAppNumber = '+14155238886';
-const toWhatsAppNumber = '+919811137166';
-const apiKey = 'AIzaSyCtsFnCD7bqByuIdi16PnlWjFRg-11Ah9w';
+const verifyServiceSid = 'your_verify_server_SId';
+const fromWhatsAppNumber = 'whatsapp_num';
+const toWhatsAppNumber = 'your_whatsapp_number';
+const apiKey = 'your_geocoding_api_key';
 
 
 
