@@ -3,16 +3,23 @@ import React from 'react';
 import './Home.css';
 import { Link } from 'react-router-dom';
 import Logout from '../../components/Logout.js';
+import Cookies from 'js-cookie';
+import React, { useEffect, useState } from 'react';
 
 const Home = () => {
-  const user = {
-    username: 'JohnDoe', // Replace with the actual username
-  };
+  const [user, setUser] = useState("");
+
+  useEffect(() => {
+    const username = Cookies.get('username'); // Read the username from cookies
+    if (username) {
+      setUser(username);
+    }
+  }, [setUser]);
 
   return (
     <div>
       <section>
-        <h2>Welcome {user.username}</h2>
+        <h2>Welcome {user}</h2>
         <Logout className="logout-button" />
       </section>
 
