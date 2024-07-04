@@ -455,6 +455,12 @@ app.post('/login', async (req, res) => {
       maxAge: 900000,
     });
 
+    res.cookie('username', user.username, {
+      httpOnly: false, // This cookie will be accessible via JavaScript
+      secure: process.env.NODE_ENV === 'production',
+      maxAge: 900000,
+    });
+
     res.cookie('bloodGroup', userBloodGroup, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
